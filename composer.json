@@ -20,5 +20,12 @@
     "require-dev": {
         "phpdocumentor/phpdocumentor": "^2.9",
         "cvuorinen/phpdoc-markdown-public": "^0.2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+
+            ]
+        }
     }
 }
