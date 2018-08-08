@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <title>Diamond's Laravel helpers</title>
+    <parser>
+        <target>build</target>
+    </parser>
+    <transformer>
+        <target>docs</target>
+    </transformer>
+    <transformations>
+        <template name="markdown-public" />
+        <transformation write="FileIo" />
+    </transformations>
+    <files>
+        <directory>src/DiamondLaravelHelpers/</directory>
+        <ignore>test/*</ignore>
+    </files>
+</phpdoc>

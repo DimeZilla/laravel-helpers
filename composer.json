@@ -1,0 +1,24 @@
+{
+    "name": "dimezilla/laravel-helpers",
+    "description": "A quick package to store some helper functions I'm using in laravel projects",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joshua Diamond",
+            "email": "diamond.joshh@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable" : true,
+    "require": {
+    },
+    "autoload": {
+        "files": [
+            "src/DiamondLaravelHelpers/helpers.php"
+        ]
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "^2.9",
+        "cvuorinen/phpdoc-markdown-public": "^0.2.0"
+    }
+}
