@@ -9,7 +9,7 @@
 
 use Illuminate\Support\Facades\Log;
 
-if (!function_exists('debug_log')) {
+if (!function_exists('debug')) {
     /**
      * A helper function to globalize logging so that we don't
      * have to keep remembering where the debug log is or
@@ -20,11 +20,17 @@ if (!function_exists('debug_log')) {
      *
      * @return  void
      */
-    function debug_log($message = '', $data = []) {
+    function debug($message = '', $data = []) {
         if (!empty($data)) {
             Log::debug($message, $data);
             return;
         }
         Log::debug($message);
+    }
+}
+
+if (!function_exists('add_query_param_to_current')) {
+    function append_query_param_to_current($key, $value) {
+        return url()->current() . '?' . http_build_query([$key => $value]);
     }
 }
