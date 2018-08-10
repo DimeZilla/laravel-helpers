@@ -16,9 +16,9 @@
         "files": [
             "src/DiamondLaravelHelpers/helpers.php"
         ],
-        "psr-4": [
+        "psr-4": {
             "DiamondLaravelHelpers\\": "src/DiamondLaravelHelpers/"
-        ],
+        }
     },
     "require-dev": {
         "phpdocumentor/phpdocumentor": "^2.9",
