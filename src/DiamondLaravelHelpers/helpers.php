@@ -11,9 +11,8 @@ use Illuminate\Support\Facades\Log;
 
 if (!function_exists('debug')) {
     /**
-     * A helper function to globalize logging so that we don't
-     * have to keep remembering where the debug log is or
-     * adding use Illuminate\Support\Facades\Log to everything.
+     * Adds a rule to the debugger to check if we are in debug mode before
+     * we log anything.
      *
      * @param string $message   The message you want to pass to the log debug
      * @param array $data   An array of data you want logged
@@ -21,6 +20,11 @@ if (!function_exists('debug')) {
      * @return  void
      */
     function debug($message = '', $data = []) {
+        // don't log anything if we aren't in debug
+        if (!config('app.debug')) {
+            return;
+        }
+
         if (!empty($data)) {
             Log::debug($message, $data);
             return;
@@ -29,8 +33,16 @@ if (!function_exists('debug')) {
     }
 }
 
-if (!function_exists('add_query_param_to_current')) {
-    function append_query_param_to_current($key, $value) {
+if (!function_exists('url_append_to_current')) {
+    /**
+     * Appends a query paramenter to the current url.
+     *
+     * @param  string $key   the query key
+     * @param  string $value the query value
+     *
+     * @return string
+     */
+    function url_append_to_current(string $key, string $value) {
         return url()->current() . '?' . http_build_query([$key => $value]);
     }
 }
