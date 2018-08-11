@@ -37,23 +37,16 @@ if (!function_exists('append_to_current_query')) {
     /**
      * Appends a query paramenter to the current url.
      *
+     * @see  https://laracasts.com/discuss/channels/laravel/add-query-string-to-current-url
+     *
      * @param  string $params   the query key
      *
      * @return string
      */
     function append_to_current_query(array $params = []) {
-        $url = url()->current();
-
-        $bits = [];
-
-        foreach ($params as $key => $value) {
-            $bits[] = urlencode($key) . '=' . urlencode($value);
-        }
-
-        if (!empty($bits)) {
-            $url .= '?' . join('&', $bits);
-        }
-
-        return $url;
+        $request = request();
+        $queries = $request->query();
+        $new_queries = array_merge($params, $queries);
+        return $request->fillUrlWithQuery($new_queries);
     }
 }
