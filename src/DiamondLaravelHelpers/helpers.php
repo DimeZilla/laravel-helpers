@@ -46,7 +46,7 @@ if (!function_exists('append_to_current_query')) {
     function append_to_current_query(array $params = []) {
         $request = request();
         $queries = $request->query();
-        $new_queries = array_merge($params, $queries);
+        $new_queries = array_merge($queries, $params);
         return $request->fullUrlWithQuery($new_queries);
     }
 }
