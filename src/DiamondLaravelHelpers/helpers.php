@@ -35,7 +35,7 @@ if (!function_exists('debug')) {
 
 if (!function_exists('append_to_current_query')) {
     /**
-     * Appends a query paramenter to the current url.
+     * Generates the current url with append query parameters.
      *
      * @see  https://laracasts.com/discuss/channels/laravel/add-query-string-to-current-url
      *
