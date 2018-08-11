@@ -60,3 +60,13 @@ if (!function_exists('is_collection')) {
         return $obj instanceof Collection;
     }
 }
+
+if(!function_exists('view_helpers')) {
+    /**
+     * Gets the ViewHelpers service provider
+     * @return \DiamondLaravelHelpers\Handlers\View
+     */
+    function view_helpers() {
+        return app('ViewHelpers');
+    }
+}
