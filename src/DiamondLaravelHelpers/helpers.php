@@ -33,16 +33,27 @@ if (!function_exists('debug')) {
     }
 }
 
-if (!function_exists('url_append_to_current')) {
+if (!function_exists('append_to_current_query')) {
     /**
      * Appends a query paramenter to the current url.
      *
-     * @param  string $key   the query key
-     * @param  string $value the query value
+     * @param  string $params   the query key
      *
      * @return string
      */
-    function url_append_to_current(string $key, string $value) {
-        return url()->current() . '?' . http_build_query([$key => $value]);
+    function append_to_current_query(array $params = []) {
+        $url = url()->current();
+
+        $bits = [];
+
+        foreach ($params as $key => $value) {
+            $bits[] = urlencode($key) . '=' . urlencode($value);
+        }
+
+        if (!empty($bits)) {
+            $url .= '?' . join('&', $bits);
+        }
+
+        return $url;
     }
 }
