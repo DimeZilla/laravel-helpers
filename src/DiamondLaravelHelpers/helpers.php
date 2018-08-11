@@ -8,6 +8,7 @@
  */
 
 use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\Collection;
 
 if (!function_exists('debug')) {
     /**
@@ -16,7 +17,6 @@ if (!function_exists('debug')) {
      *
      * @param string $message   The message you want to pass to the log debug
      * @param array $data   An array of data you want logged
-     *
      * @return  void
      */
     function debug($message = '', $data = []) {
@@ -38,9 +38,7 @@ if (!function_exists('append_to_current_query')) {
      * Generates the current url with append query parameters.
      *
      * @see  https://laracasts.com/discuss/channels/laravel/add-query-string-to-current-url
-     *
      * @param  string $params   the query key
-     *
      * @return string
      */
     function append_to_current_query(array $params = []) {
@@ -48,5 +46,17 @@ if (!function_exists('append_to_current_query')) {
         $queries = $request->query();
         $new_queries = array_merge($queries, $params);
         return $request->fullUrlWithQuery($new_queries);
+    }
+}
+
+if (!function_exists('is_collection')) {
+    /**
+     * Simply checks if a variable is a laravel collection
+     * @param  mixed  $obj  any variable we want to test.
+     * @return boolean
+     */
+    function is_collection($obj = null)
+    {
+        return $obj instanceof Collection;
     }
 }
