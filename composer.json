@@ -28,7 +28,10 @@
         "laravel": {
             "providers": [
                 "DiamondLaravelHelpers\\Providers\\ViewProvider"
-            ]
+            ],
+            "aliases": {
+                "ViewHelpers": "DiamondLaravelHelpers\\Facades\\ViewHelpers"
+            }
         }
     }
 }

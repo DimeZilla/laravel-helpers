@@ -11,6 +11,8 @@ use DiamondLaravelHelpers\Handlers\View;
 class ViewProvider extends ServiceProvider
 {
 
+    protected $defer = true;
+
     /**
      * Register any application services.
      *
@@ -21,5 +23,14 @@ class ViewProvider extends ServiceProvider
         $this->app->bind('ViewHelper', function ($app) {
             return new View();
         });
+    }
+
+    /**
+     * register our defered provider name
+     * @return array
+     */
+    public function provides()
+    {
+        return ['ViewHelpers'];
     }
 }
