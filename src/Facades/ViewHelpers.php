@@ -13,6 +13,6 @@ class ViewHelpers extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'ViewHelpers';
+        return 'view.helpers';
     }
 }

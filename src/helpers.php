@@ -67,6 +67,6 @@ if(!function_exists('view_helpers')) {
      * @return \DiamondLaravelHelpers\Handlers\View
      */
     function view_helpers() {
-        return app('ViewHelpers');
+        return app('view.helpers');
     }
 }

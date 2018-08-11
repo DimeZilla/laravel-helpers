@@ -20,7 +20,7 @@ class ViewProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('ViewHelper', function ($app) {
+        $this->app->bind('view.helpers', function ($app) {
             return new View();
         });
     }
@@ -31,6 +31,6 @@ class ViewProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['ViewHelpers'];
+        return ['view.helpers'];
     }
 }
