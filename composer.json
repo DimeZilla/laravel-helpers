@@ -17,7 +17,7 @@
             "src/DiamondLaravelHelpers/helpers.php"
         ],
         "psr-4": {
-            "DiamondLaravelHelpers\\": "src/DiamondLaravelHelpers/"
+            "DiamondLaravelHelpers\\": "src/"
         }
     },
     "require-dev": {
