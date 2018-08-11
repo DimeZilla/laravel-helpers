@@ -14,7 +14,7 @@
     },
     "autoload": {
         "files": [
-            "src/DiamondLaravelHelpers/helpers.php"
+            "src/helpers.php"
         ],
         "psr-4": {
             "DiamondLaravelHelpers\\": "src/"
