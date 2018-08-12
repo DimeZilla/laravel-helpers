@@ -1,7 +1,12 @@
 <?php
-
+/**
+ * Contains DiamondLaravelHelpers\Handlers\View
+ */
 namespace DiamondLaravelHelpers\Handlers;
 
+/**
+ * This class contains the actual view helpers.
+ */
 class View {
     /**
      * Takes a db field and turns it into something readable in a view

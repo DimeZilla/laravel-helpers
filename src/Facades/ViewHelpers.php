@@ -1,9 +1,15 @@
 <?php
-
+/**
+ * Our Facade for the view helpers
+ */
 namespace DiamondLaravelHelpers\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * Extends the facade class from laravel so that our View helpers can be called
+ * statically.
+ */
 class ViewHelpers extends Facade
 {
     /**

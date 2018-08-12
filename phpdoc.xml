@@ -8,11 +8,9 @@
         <target>docs</target>
     </transformer>
     <transformations>
-        <template name="markdown-public" />
-        <transformation write="FileIo" />
+        <template name="vendor/dimezilla/phpdoc-github-markdown/data/templates/dimezilla-markdown" />
     </transformations>
     <files>
-        <directory>src/DiamondLaravelHelpers/</directory>
-        <ignore>test/*</ignore>
+        <directory>src/</directory>
     </files>
 </phpdoc>
