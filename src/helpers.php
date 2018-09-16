@@ -70,3 +70,32 @@ if(!function_exists('view_helpers')) {
         return app('view.helpers');
     }
 }
+
+if (!function_exists('is_serialzed')) {
+    /**
+     * Checks if something is serialized php
+     * @see  https://www.daniweb.com/programming/web-development/threads/448477/check-if-a-string-is-serialized
+     * @return  boolean
+     */
+    function is_serialized($data = null)
+    {
+        if (is_null($data) || !is_string($data))
+            return false;
+
+        // it is null
+        if ($data === 'N;') {
+            return true;
+        }
+
+        // look for semicolons and braces - signs of serialized php
+        // borrowed from wordpress
+        $semicolon = strpos($data, ';');
+        $brace = strpos($data, '}');
+        if ($semicolon === false && $brace === false) {
+            return false;
+        }
+
+        // otherwise, just try unserializing it and suppress the warning.
+        return @unserialize($data) !== false;
+    }
+}
