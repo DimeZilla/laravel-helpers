@@ -79,8 +79,9 @@ if (!function_exists('is_serialzed')) {
      */
     function is_serialized($data = null)
     {
-        if (is_null($data) || !is_string($data))
+        if (is_null($data) || !is_string($data)) {
             return false;
+        }
 
         // it is null
         if ($data === 'N;') {
